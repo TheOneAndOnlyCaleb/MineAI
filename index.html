@@ -21,7 +21,7 @@
             <rect x="13" y="4" width="6" height="6" rx="1" fill="#2D5016"/>
             <rect x="21" y="7" width="5" height="5" rx="1" fill="#2D5016"/>
             <rect x="7" y="19" width="4" height="4" rx="1" fill="#6B4423"/>
-            <rect x="17" y="23" width="4" height="4" rx="1" fill="#6B4423"/>
+            <rect x="17" y="23" width="4" height="4" rx="1" fill="#6B4423"/>    
             <rect x="24" y="18" width="3" height="3" rx="1" fill="#6B4423"/>
             <defs>
               <linearGradient id="grass-gradient" x1="2" y1="2" x2="30" y2="16" gradientUnits="userSpaceOnUse">
@@ -41,6 +41,16 @@
           <span class="status-dot"></span>
           <span class="status-text">Online</span>
         </div>
+
+        <!-- Nav toggle (new) -->
+        <button id="navToggleBtn" class="btn btn-icon" title="Menu" aria-controls="sideNav" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+
         <button id="settingsBtn" class="btn btn-icon" title="Settings">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"/>
@@ -70,7 +80,7 @@
     <footer class="input-area">
       <div class="input-wrapper">
         <div class="input-container">
-          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg class="input-icon" viewBox="0="0"24"24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
           </svg>
           <input type="text" id="messageInput" placeholder="Ask me about Minecraft..." autocomplete="off">
@@ -92,6 +102,24 @@
         Press Enter to send • Ask about items, mobs, crafting, or redstone
       </p>
     </footer>
+  </div>
+
+  <!-- Side Nav (off-canvas) -->
+  <div id="sideNav" class="side-nav" aria-hidden="true">
+    <div class="side-nav-backdrop" id="sideNavBackdrop"></div>
+    <aside class="side-nav-panel" role="dialog" aria-label="Main menu" aria-modal="true">
+      <div class="side-nav-header">
+        <h3>Menu</h3>
+      </div>
+      <div class="side-nav-body">
+        <nav class="nav-buttons">
+          <button id="signUpBtn" class="btn btn-primary">Sign Up</button>
+          <button id="signInBtn" class="btn">Sign In</button>
+          <button id="discordBtn" class="btn">Discord</button>
+          <button id="navBackBtn" class="btn btn-icon btn-close" title="Back">Back</button>
+        </nav>
+      </div>
+    </aside>
   </div>
 
   <div id="settingsModal" class="modal">
@@ -182,6 +210,5 @@
   </div>
 
   <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css>
 </body>
 </html>

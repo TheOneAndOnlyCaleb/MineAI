@@ -667,7 +667,82 @@ body {
   display: flex;
 }
 
-/* Responsive */
+/* Side Nav (off-canvas right) */
+.side-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  pointer-events: none;
+}
+
+.side-nav-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  transition: opacity 220ms ease;
+  backdrop-filter: blur(6px);
+}
+
+.side-nav-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 320px;
+  max-width: 90%;
+  background: var(--bg-secondary);
+  box-shadow: -12px 0 32px rgba(0,0,0,0.6);
+  border-left: 1px solid var(--border-color);
+  transform: translateX(100%);
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+}
+
+.side-nav .side-nav-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.side-nav .side-nav-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.side-nav .side-nav-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Nav buttons inside panel */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.side-nav.open .side-nav-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.side-nav.open .side-nav-panel {
+  transform: translateX(0);
+}
+
+/* Small UX tweak for Back button */
+.nav-buttons .btn-close {
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+        
 @media (max-width: 640px) {
   body {
     padding: 0;
@@ -743,5 +818,9 @@ body {
   .modal-content {
     width: 95%;
     max-height: 90vh;
+  }
+
+  .side-nav-panel {
+    width: 280px;
   }
 }
